@@ -1,7 +1,13 @@
-const Main = () => {
+import {Routes, Switch, Route, Redirect } from 'react-router-dom';
+import Home from './home/Home';
 
-    return (<div>
-<h1>ddd</h1>
-    </div>)
+const Main = () => {
+    return (
+        <div>
+            <Routes>
+                <Route path='/' exact component={Home} />
+            </Routes>
+        </div>
+    )
 }
 export default Main;
