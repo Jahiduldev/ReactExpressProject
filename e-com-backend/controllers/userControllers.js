@@ -28,7 +28,7 @@ module.exports.signIn = async (req, res) => {
     if (!user) return res.status(400).send('Invalid email or password!');
 
     const validUser = await bcrypt.compare(req.body.password, user.password);
-    if (!validUser) return res.status(400).send('Invalid email or password!');
+    if (!validUser) return res.status(400).send('Invalid email or password found!');
 
     const token = user.generateJWT();
     return res.status(200).send({
