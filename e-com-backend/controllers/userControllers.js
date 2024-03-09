@@ -3,6 +3,7 @@ const _ = require('lodash');
 const { User, validate } = require('../models/user');
 
 module.exports.signUp = async (req, res) => {
+    
     const { error } = validate(req.body);
     if (error) return res.status(400).send(error.details[0].message);
     let user = {};
