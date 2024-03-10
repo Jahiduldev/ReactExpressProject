@@ -3,7 +3,6 @@ import Layout from '../Layout';
 import { showError, showLoading } from '../../utils/messages';
 
 const Register = () => {
-    
     const [values, setValues] = useState({
         name: '',
         email: '',
@@ -19,16 +18,15 @@ const Register = () => {
     const handleChange = e => {
         setValues({
             ...values,
-            error:false,
-            [e.target.name]:e.target.value
+            error: false,
+            [e.target.name]: e.target.value
         })
     }
 
     const handleSubmit = e => {
-       e.preventDefault(JSON.stringify(values));
+        e.preventDefault();
+        alert(JSON.stringify(values));
     }
-
-
 
     const signUpForm = () => (
         <form onSubmit={handleSubmit}>
@@ -40,7 +38,7 @@ const Register = () => {
             <div className="form-group">
                 <label className="text-muted">Email:</label>
                 <input type="email" name="email" className="form-control"
-                    value={email} />
+                    value={email} required onChange={handleChange} />
             </div>
             <div className="form-group">
                 <label className="text-muted">Password:</label>
