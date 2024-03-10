@@ -75,7 +75,7 @@ const Register = () => {
     const showSuccess = () => {
         if (success) return (
             <div className="alert alert-primary">
-                {/* New Account Created. Please <Link to="/login">Login</Link>. */}
+                New Account Created. Please <Link to="/login">Login</Link>.
             </div>
         )
     }
