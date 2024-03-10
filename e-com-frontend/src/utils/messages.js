@@ -3,9 +3,9 @@ export const showError = (error, msg) => {
 }
 
 export const showSuccess = (success, msg) => {
-    if(error) return <div className="alert alert-danger">{msg}</div>
+    if(success) return <div className="alert alert-danger">{msg}</div>
 }
 
 export const showLoading = loading => {
-    if(error) return <div className="alert alert-info">{loading}</div>
+    if(loading) return <div className="alert alert-info">{loading}</div>
 }

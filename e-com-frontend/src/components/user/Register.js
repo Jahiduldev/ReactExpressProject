@@ -25,13 +25,13 @@ const Register = () => {
     }
 
     const handleSubmit = e => {
-       e.preventDefault();
+       e.preventDefault(JSON.stringify(values));
     }
 
 
 
     const signUpForm = () => (
-        <form onSubmit={preventDefault}>
+        <form onSubmit={handleSubmit}>
             <div className="form-group">
                 <label className="text-muted">Name:</label>
                 <input type="text" name="name" className="form-control"
