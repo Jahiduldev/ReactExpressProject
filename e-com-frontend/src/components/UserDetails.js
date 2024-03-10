@@ -5,6 +5,7 @@ const UserDetails = () => {
   const param = useParams();
   return (
     <div>
+        
       <p>User Details: {JSON.stringify(param)}</p>
     </div>
   );
