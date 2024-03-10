@@ -16,12 +16,20 @@ const Register = () => {
 
     const { name, email, password, success, error, loading, disabled } = values;
 
+    const handleChange = e => {
+        setValues({
+            ...values,
+            error:false,
+            [e.target.name]:e.target.value
+        })
+    }
+
     const signUpForm = () => (
         <form>
             <div className="form-group">
                 <label className="text-muted">Name:</label>
                 <input type="text" name="name" className="form-control"
-                    value={name} />
+                    value={name} required onChange={handleChange} />
             </div>
             <div className="form-group">
                 <label className="text-muted">Email:</label>
@@ -31,7 +39,7 @@ const Register = () => {
             <div className="form-group">
                 <label className="text-muted">Password:</label>
                 <input type="password" name="password" className="form-control"
-                    value={password} />
+                    value={password} required onChange={handleChange} />
             </div>
             <button type="submit" className="btn btn-primary" disabled={disabled}>Create Account</button>
         </form>
