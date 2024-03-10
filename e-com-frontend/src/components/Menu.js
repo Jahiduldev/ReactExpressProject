@@ -6,7 +6,7 @@ const Menu = () => {
   const location = useLocation();
 
   const isActive = (path) => {
-    return location.pathname === path;
+      return location.pathname === path;
   };
 
   return (
