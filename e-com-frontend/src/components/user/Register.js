@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Layout from '../Layout';
+import { showError, showLoading } from '../../utils/messages';
 
 const Register = () => {
     
