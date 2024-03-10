@@ -24,8 +24,14 @@ const Register = () => {
         })
     }
 
+    const handleSubmit = e => {
+       e.preventDefault();
+    }
+
+
+
     const signUpForm = () => (
-        <form>
+        <form onSubmit={preventDefault}>
             <div className="form-group">
                 <label className="text-muted">Name:</label>
                 <input type="text" name="name" className="form-control"
