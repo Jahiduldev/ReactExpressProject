@@ -1,10 +1,12 @@
 import { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Layout from '../Layout';
 import { showError, showLoading } from '../../utils/messages';
 import { login } from '../../api/apiAuth';
 
 const Login = () => {
+    const navigate = useNavigate();
+
     const [values, setValues] = useState({
         email: '',
         password: '',
@@ -68,9 +70,12 @@ const Login = () => {
         </form>
     );
 
+    // Use Navigate to redirect
     const redirectUser = () => {
-      //  if (redirect) return <Redirect to="/" />
-    }
+        if (redirect) {
+            navigate('/');
+        }
+    };
     return (
         <Layout title="Login" className="container col-md-8 offset-md-2">
             {redirectUser()}
